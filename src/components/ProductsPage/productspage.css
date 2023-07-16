@@ -1,0 +1,12 @@
+.cardContainer {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    align-self: stretch;
+    flex-wrap: wrap;
+}
+
+.products{
+    display: flex;
+    gap:30px;
+}
