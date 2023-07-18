@@ -1,3 +1,7 @@
+
+
+
+{/* BORRAR COMPONENTE */}
 import React from 'react'
 import { ProductsList, Filter } from "../";
 import './productspage.css'

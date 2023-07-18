@@ -1,14 +1,19 @@
 import React from 'react'
-import { HouseDoorFill, CartFill } from 'react-bootstrap-icons'
+import { HouseDoorFill, CartFill, Search, EnvelopeFill } from 'react-bootstrap-icons'
 import './menu.css'
+import { NavLink } from 'react-router-dom'
 
 const Menu = () => {
   return (
+    <>
     <nav className='menu'>
-        <a>Contacto</a>
-        <a><HouseDoorFill /></a>
-        <a><CartFill/></a>
+        <NavLink to='/' className='navItem'><HouseDoorFill /></NavLink>
+        <NavLink to='/search' className='navItem'><Search /></NavLink>
+        <NavLink to='/cart' className='navItem'><CartFill/></NavLink>
+        <NavLink to='/contact' className='navItem'><EnvelopeFill /></NavLink>
     </nav>
+
+    </>
   )
 }
 

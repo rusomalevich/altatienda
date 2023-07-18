@@ -1,0 +1,25 @@
+.cardContainer {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    align-self: stretch;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 75%;
+}
+
+.products {
+    display: flex;
+    gap: 30px;
+    padding: 0 10px;
+}
+
+@media (max-width: 576px) {
+    .products {
+        flex-flow: column-reverse;
+    }
+
+    .cardContainer {
+        gap: 20px;
+    }
+}

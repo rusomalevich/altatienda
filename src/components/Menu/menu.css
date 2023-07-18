@@ -2,4 +2,19 @@
     width: 120px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.menu a svg{
+    width: 20px;
+    height: 20px;
+}
+
+.menu .navItem {
+    color: var(--gray-blue-grey-blue-70);
+    transition: .3s;
+}
+
+.menu .navItem:hover{
+    color: var(--secondary);
 }

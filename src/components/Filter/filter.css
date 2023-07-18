@@ -1,3 +1,39 @@
 .filter {
-    width: 50%;
+    width: 25%;
+}
+
+.formChecks{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.formChecks>label {
+    width: 40%;
+}
+
+.formPrice {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.formPrice > input {
+    margin: 0;
+    flex-grow: 2;
+}
+
+.formPrice label {display: none;}
+
+input.inputNumberPrice {
+    width: 47%;
+    border-radius: 5px;
+    border: 2px solid var(--gray-blue-grey-blue-95, #EDEFF2);
+    margin-top: 12px;
+    line-height: 35px;
+}
+
+.numbersContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
