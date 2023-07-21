@@ -8,7 +8,6 @@ const Menu = () => {
     <>
     <nav className='menu'>
         <NavLink to='/' className='navItem'><HouseDoorFill /></NavLink>
-        <NavLink to='/search' className='navItem'><Search /></NavLink>
         <NavLink to='/cart' className='navItem'><CartFill/></NavLink>
         <NavLink to='/contact' className='navItem'><EnvelopeFill /></NavLink>
     </nav>

@@ -37,7 +37,7 @@
     border: 0.5px solid var(--grey-light);
 }
 
-.btnSend {
+.btn {
     width: 289px;
     height: 48px;
     padding: 8px 20px;
@@ -54,7 +54,7 @@
     transition: .3s;
 }
 
-.btnSend:hover {
+.btn:hover {
     background-color: var(--primary);
 }
 
@@ -62,4 +62,14 @@
     content: '*';
     padding-left: 2px;
     color: var(--secondary);    
+}
+
+@media (max-width: 576px) {
+    .contactPage{
+        width: 80%;
+    }
+
+    .contactForm input{
+        width: 100%;
+    }
 }

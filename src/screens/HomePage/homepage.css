@@ -14,12 +14,19 @@
     padding: 0 10px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
+    .cardContainer {
+        width: 100%;
+    }
     .products {
         flex-flow: column-reverse;
     }
+}
+
+@media (max-width: 576px) {
 
     .cardContainer {
         gap: 20px;
+        width: 100%;
     }
 }

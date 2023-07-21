@@ -1,90 +1,21 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './productslist.css'
 
-const ProductsList = () => {
+
+const ProductsList = ({product}) => {
+
   return (
-    <div className='cardContainer'>
+    <>
       <div className='card'>
-        <a href="#" title="Apple MacBook Pro" className='cardLink'>
-          <img src="https://www.macstation.com.ar/img/productos/3011-mnej3le-a.jpg" alt="" />
-          <h3>Laptops</h3>
-          <h2>Apple Mac Book Pro</h2>
-          <p>$950.00</p>
-        </a>
+        <Link to={'/detail/'+product.id} title={product.title} className='cardLink'>
+          <img src={product.image} alt="" />
+          <h3 className='category'>{product.category}</h3>
+          <h2>{product.title}</h2>
+          <p className='price'>${product.price}</p>
+        </Link>
       </div>
-      <div className='card'>
-        <a href="#" title="Apple MacBook Pro" className='cardLink'>
-          <img src="https://www.macstation.com.ar/img/productos/3011-mnej3le-a.jpg" alt="" />
-          <h3>Laptops</h3>
-          <h2>Apple Mac Book Pro</h2>
-          <p>$950.00</p>
-        </a>
-      </div>
-      <div className='card'>
-        <a href="#" title="Apple MacBook Pro" className='cardLink'>
-          <img src="https://www.macstation.com.ar/img/productos/3011-mnej3le-a.jpg" alt="" />
-          <h3>Laptops</h3>
-          <h2>Apple Mac Book Pro</h2>
-          <p>$950.00</p>
-        </a>
-      </div>
-      <div className='card'>
-        <a href="#" title="Apple MacBook Pro" className='cardLink'>
-          <img src="https://www.macstation.com.ar/img/productos/3011-mnej3le-a.jpg" alt="" />
-          <h3>Laptops</h3>
-          <h2>Apple Mac Book Pro</h2>
-          <p>$950.00</p>
-        </a>
-      </div>
-      <div className='card'>
-        <a href="#" title="Apple MacBook Pro" className='cardLink'>
-          <img src="https://www.macstation.com.ar/img/productos/3011-mnej3le-a.jpg" alt="" />
-          <h3>Laptops</h3>
-          <h2>Apple Mac Book Pro</h2>
-          <p>$950.00</p>
-        </a>
-      </div>
-      <div className='card'>
-        <a href="#" title="Apple MacBook Pro" className='cardLink'>
-          <img src="https://www.macstation.com.ar/img/productos/3011-mnej3le-a.jpg" alt="" />
-          <h3>Laptops</h3>
-          <h2>Apple Mac Book Pro</h2>
-          <p>$950.00</p>
-        </a>
-      </div>
-      <div className='card'>
-        <a href="#" title="Apple MacBook Pro" className='cardLink'>
-          <img src="https://www.macstation.com.ar/img/productos/3011-mnej3le-a.jpg" alt="" />
-          <h3>Laptops</h3>
-          <h2>Apple Mac Book Pro</h2>
-          <p>$950.00</p>
-        </a>
-      </div>
-      <div className='card'>
-        <a href="#" title="Apple MacBook Pro" className='cardLink'>
-          <img src="https://www.macstation.com.ar/img/productos/3011-mnej3le-a.jpg" alt="" />
-          <h3>Laptops</h3>
-          <h2>Apple Mac Book Pro</h2>
-          <p>$950.00</p>
-        </a>
-      </div>
-      <div className='card'>
-        <a href="#" title="Apple MacBook Pro" className='cardLink'>
-          <img src="https://www.macstation.com.ar/img/productos/3011-mnej3le-a.jpg" alt="" />
-          <h3>Laptops</h3>
-          <h2>Apple Mac Book Pro</h2>
-          <p>$950.00</p>
-        </a>
-      </div>
-      <div className='card'>
-        <a href="#" title="Apple MacBook Pro" className='cardLink'>
-          <img src="https://www.macstation.com.ar/img/productos/3011-mnej3le-a.jpg" alt="" />
-          <h3>Laptops</h3>
-          <h2>Apple Mac Book Pro</h2>
-          <p>$950.00</p>
-        </a>
-      </div>
-    </div>
+    </>
   )
 }
 

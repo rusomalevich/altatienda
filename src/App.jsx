@@ -1,8 +1,7 @@
-import { useState } from 'react'
 import './App.css'
-import { Header, ProductsPage, Footer } from './components'
-import { Cart, Contact, DetailPage, HomePage, SearchPage } from './screens'
-import { NavLink, Route, Routes } from 'react-router-dom'
+import { Header, Footer } from './components'
+import { Cart, Contact, DetailPage, HomePage } from './screens'
+import { Route, Routes } from 'react-router-dom'
 
 
 function App() {
@@ -14,7 +13,7 @@ function App() {
         {/*<ProductsPage />*/}
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/detail' element={<DetailPage />} />
+          <Route path='/detail/:id' element={<DetailPage />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/contact' element={<Contact />} />
         </Routes>

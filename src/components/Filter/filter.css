@@ -37,3 +37,27 @@ input.inputNumberPrice {
     width: 100%;
     justify-content: space-between;
 }
+
+.filter .searchForm {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .filter {
+        width: 100%;
+    }
+    
+    .filter .searchForm {
+        display: block;
+    }
+    
+    .filter .searchForm #search {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .filter {
+        width: 100%;
+    }
+}

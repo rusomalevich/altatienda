@@ -9,7 +9,15 @@
     padding: 0 15px;
 }
 
+.searchLabel {display: none;}
+
 @media (max-width: 576px) {
     .searchForm {display:none;}
     .searchIcon {display: inline;}
+}
+
+@media (max-width: 768px) {
+    .searchForm {
+            display: none;
+        }
 }

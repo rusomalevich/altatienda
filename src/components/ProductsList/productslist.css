@@ -1,9 +1,10 @@
 .card{
     width: 30%;
     background-color: var(--white);
-    padding: 40px 0;
     box-shadow: 1px 1px 16px -15px;
     text-align: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
 }
 
 .card, .cardLink>h2, .cardLink>img {
@@ -28,7 +29,7 @@
     max-width: 50%;
 }
 
-.cardLink > h3 {
+.category {
     color:var(--gray-blue-grey-blue-70);
     text-transform: uppercase;
     font-size: 1rem;
@@ -44,8 +45,21 @@
     font-size: 1.2rem;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1024px) {
     .card {
-        width: 90%;
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .cardLink>h3 {
+        margin-top: 15px;
     }
 }

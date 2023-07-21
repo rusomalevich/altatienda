@@ -12,7 +12,7 @@ const Contact = () => {
             <input type="email" name="email" id="email"  required/>
             <label htmlFor="message" className='required'>Mensaje</label>
             <textarea name="message" id="message" cols="30" rows="10" required></textarea>
-            <button className='btnSend'>Enviar</button>
+            <button className='btn btnSend'>Enviar</button>
         </form>
     </div>
   )
