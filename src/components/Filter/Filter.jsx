@@ -1,22 +1,44 @@
-import React from 'react'
+import React, { useState} from "react"
 import Search from '../Search/Search'
+import { useCustomContext } from '../../ContextManager/ContextProvider'
 import './filter.css'
 
 const Filter = () => {
+  const { categories, filterSearch, filterCatSearch, filteredProducts, setFilteredProducts } = useCustomContext()
+  const [searchValue, setSearchValue] = useState('')
+  const [catFilterValue, setCatFilterValue] = useState('')
+
+  let filterCatForm = document.querySelectorAll('.btnCatFilter')
+
+  const filterChangeToggle = (e) => {
+    e.preventDefault()
+    filterCatForm.forEach(btn => {
+      btn.classList.remove("activeBtn")
+    })
+    if (catFilterValue !== e.target.value){
+      e.target.classList.add('activeBtn')
+      setCatFilterValue(e.target.value)
+      filterCatSearch(e.target.value)
+    } else {
+        setCatFilterValue('')
+        filterCatSearch('')
+    }
+
+  }
+
   return (
     <div className='filter'>
       <Search />
-      <div className='brand'>
-        <h2>Marca</h2>
-        <form action="" className='formBrand formChecks'>
-            <label htmlFor="apple"><input id="apple" value="Apple" type='checkbox' />Apple</label>
-            <label htmlFor="alcatel"><input id="alcatel" value="Alcatel" type='checkbox' />Alcatel</label>
-            <label htmlFor="bq"><input id="bq" value="BQ" type='checkbox' />BQ</label>
-            <label htmlFor="honor"><input id="honor" value="Honor" type='checkbox' />Honor</label>
-            <label htmlFor="meizu"><input id="meizu" value="Meizu" type='checkbox' />Meizu</label>
-            <label htmlFor="oneplus"><input id="oneplus" value="OnePlus" type='checkbox' />OnePlus</label>
-            <label htmlFor="samsung"><input id="samsung" value="Samsung" type='checkbox' />Samsung</label>
-            <label htmlFor="zte"><input id="zte" value="ZTE "type='checkbox' />ZTE</label>
+      <div className='filterCategory'>
+        <h2>Categoría</h2>
+        <form action="" id='filterCatForm' className='formBrand formChecks'>
+          {
+            categories.map((category, index) => (
+                <button onClick={filterChangeToggle} key={category} name="category" className='btnCatFilter' value={category}>{category}</button>
+            ))
+            
+          }
+
         </form>
       </div>
       <div className='price'>

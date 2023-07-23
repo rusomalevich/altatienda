@@ -1,5 +1,5 @@
 .card{
-    width: 30%;
+    /*width: 30%;*/
     background-color: var(--white);
     box-shadow: 1px 1px 16px -15px;
     text-align: center;
@@ -46,9 +46,11 @@
 }
 
 @media (max-width: 1024px) {
+    /*
     .card {
         width: 45%;
     }
+    */
 }
 
 @media (max-width: 768px) {

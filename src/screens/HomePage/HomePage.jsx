@@ -1,26 +1,39 @@
 import React, { useState, useEffect } from 'react'
 import { ProductsList, Filter, Search } from "../../components"
 import { useCustomContext } from '../../ContextManager/ContextProvider'
+import Masonry from 'react-masonry-css'
 import './homepage.css'
 
 const HomePage = () => {
     const { products, filteredProducts } = useCustomContext()
+    const breakpointColumnsObj = {
+        default: 3,
+        1024: 2,
+        576: 1
+    };
     
     return (
         <>
             <h1>Productos</h1>
             <div className='products'>
-                <div className='cardContainer'>
-                    {
-                        filteredProducts && filteredProducts.length > 0
-                        ? filteredProducts.map((product) => (
-                            <ProductsList product={product} key={product.id} />
+
+                    <Masonry
+                        breakpointCols={breakpointColumnsObj}
+                        className='cardContainer'
+                        columnClassName='cardContainer-column'
+
+                    >
+                        {
+                            filteredProducts && filteredProducts.length > 0
+                            ? filteredProducts.map((product) => (
+                                <ProductsList product={product} key={product.id} />
+                            ))
+                        : products.map((product) => (
+                                <ProductsList product={product} key={product.id} />
                         ))
-                       : products.map((product) => (
-                            <ProductsList product={product} key={product.id} />
-                       ))
-                    }
-                </div>
+                        }
+                    </Masonry>
+
                 <Filter />
             </div>
         </>

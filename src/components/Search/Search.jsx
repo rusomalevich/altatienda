@@ -5,30 +5,11 @@ import './search.css'
 const Search = () => {
   const [q, setQ] = useState("")
   const { filterSearch, filteredProducts, setFilteredProducts } = useCustomContext()
-  /*
-  const [q, setQ] = useState("")
-  const { filterSearch } = useCustomContext()
-
-  const handleSearch = (e) => {
-    e.preventDefault()
-    filterSearch(q)
-    console.log(q)
-  }
-  */
-
-  /*
-  const handleSearch = (e) => {
-    e.preventDefault()
-    filterSearch(q)
-  }
-  */
 
   const handleChange=(e) => {
     const searchValue = e.target.value
     setQ(searchValue)
-    /*const results = filterSearch(searchValue)
-    setFilteredProducts(results)
-    */
+
    filterSearch(searchValue)
   }
 
@@ -42,7 +23,6 @@ const Search = () => {
           name='search'
           className='searchInput'
           value={q}
-          //onChange={(e) => setQ(e.target.value)}
           onChange={handleChange}
           />
     </form>
