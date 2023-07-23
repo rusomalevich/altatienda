@@ -51,9 +51,10 @@ const ContextProvider = ({children}) => {
     const filterCatSearch = (catFilterValue) => {
         const filteredProducts = products.filter((product) =>
             product.category.toLowerCase() === catFilterValue.toLowerCase()
-        );
+        )
         setFilteredProducts(filteredProducts);
-    };
+    }
+    
   return (
       <Context.Provider value={{ searchInCategories, categories, products, setProducts, getProductsById, filteredProducts, setFilteredProducts, filterSearch, filterCatSearch }}>
         {children}
