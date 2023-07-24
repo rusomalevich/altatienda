@@ -1,24 +1,25 @@
 import React, {useEffect, useState}  from 'react'
 import {useParams} from 'react-router-dom'
 import { useCustomContext } from '../../ContextManager/ContextProvider'
+import { Counter } from '../../components/index'
 import './detailpage.css'
 
 const DetailPage = () => {
 
   const {id} = useParams()
-  const {getProductsById} = useCustomContext()
-  const [productDetail, setProductDetail] = useState(null);
+  const {getProductById, addProductCart, isInCart, getProductCartById} = useCustomContext()
+  const [productDetail, setProductDetail] = useState(isInCart(id) ? getProductCartById(id) : getProductById(id));
   
   //Tuve que agregar el useEffects porque si entraba directamente al /detail/:id no tenía
   useEffect(() => {
 
     const fetchProductDetails = async () => {
-      const product = getProductsById(id);
+      const product = getProductById(id);
       setProductDetail(product);
     };
 
     fetchProductDetails();
-  }, [id, getProductsById])
+  }, [id, getProductById])
 
   if (!productDetail) {
     //CAMBIAR POR GIF
@@ -37,7 +38,7 @@ const DetailPage = () => {
         </div>
         <div className='descBtnContainer'>
           <p>{productDetail.description}</p>
-          <button className='btn'>Agregar al carrito</button>
+          <Counter id={productDetail.id}/>
         </div>
     </article>
   )

@@ -10,6 +10,37 @@ const ContextProvider = ({children}) => {
     const [products, setProducts] = useState([])
     const [searchInCategories, setSearchInCategories] =useState([])
     const [filteredProducts, setFilteredProducts] = useState([])
+    const [cart, setCart] = useState([])
+
+    const getProductById = (id) => {
+        return products.find(product => product.id === Number(id))
+    }
+
+    const getProductCartById = (id) => {
+        return cart.find(product => product.id === Number(id))
+    }
+
+    const isInCart = (id) => cart.some(product => product.id === Number(id))
+
+    const addProductCart = (id, quantity) =>{
+        if(isInCart(id)){
+            SetCart(cart.map(product =>{
+                if(product.id == id) {
+                    product.quantity = quantity
+                }
+                return product
+            }))
+        } else{
+            setCart([...cart, {...getProductById(id), quantity: quantity}])
+   
+        }
+    }
+
+    const getTotal = () => {
+        let total = 0
+        cart.forEach(product => total += product.precio * product.quantity)
+        return total
+    }
 
     useEffect(() => {
         const getProducts = async () => {
@@ -56,7 +87,7 @@ const ContextProvider = ({children}) => {
     }
     
   return (
-      <Context.Provider value={{ searchInCategories, categories, products, setProducts, getProductsById, filteredProducts, setFilteredProducts, filterSearch, filterCatSearch }}>
+      <Context.Provider value={{ products, setProducts, getProductById, cart, addProductCart, isInCart, getTotal, searchInCategories, categories, filteredProducts, setFilteredProducts, filterSearch, filterCatSearch }}>
         {children}
     </Context.Provider>
   )
