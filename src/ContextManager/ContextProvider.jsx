@@ -22,6 +22,11 @@ const ContextProvider = ({children}) => {
         return cart.find(product => product.id === Number(id))
     }
 
+    const removeFromCart = (id) => {
+        setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+      };
+    
+
     const isInCart = (id) => cart.some(product => product.id === Number(id))
 
     const addProductCart = (id, quantity) =>{
@@ -94,7 +99,7 @@ const ContextProvider = ({children}) => {
     }
     
   return (
-      <Context.Provider value={{ loading, products, setProducts, getProductById, cart, addProductCart, isInCart, getProductCartById, getTotal, searchInCategories, categories, filteredProducts, setFilteredProducts, filterSearch, filterCatSearch }}>
+      <Context.Provider value={{ loading, products, setProducts, getProductById, cart, setCart, removeFromCart, addProductCart, isInCart, getProductCartById, getTotal, searchInCategories, categories, filteredProducts, setFilteredProducts, filterSearch, filterCatSearch }}>
         {children}
     </Context.Provider>
   )

@@ -17,7 +17,7 @@
 p {font-size:1.5rem;}
 
 /* Dejo para dps por si implemento modo oscuro pero dependo de que las imágenes de la API no tengan el fondo blanco*/
-/*
+
 @media (prefers-color-scheme: dark) {
   :root {
  
@@ -36,4 +36,3 @@ p {font-size:1.5rem;}
     font-size: 10px;
   }
 }
-*/

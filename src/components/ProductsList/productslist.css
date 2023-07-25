@@ -11,17 +11,17 @@
     transition: .3s;
 }
 
-.card:hover {
+.cardLink:hover {
     box-shadow: 1px 1px 16px -10px;
     transform: scale(1.05);
 }
 
-.card:hover h2 {
+.cardLink:hover h2 {
     color: var(--primary);
     transform: scale(1.05);
 }
 
-.card:hover img {
+.cardLink:hover img {
     transform: scale(1.09);
 }
 

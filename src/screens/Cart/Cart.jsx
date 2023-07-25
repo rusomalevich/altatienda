@@ -1,38 +1,41 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useCustomContext } from '../../ContextManager/ContextProvider'
+import { Counter } from '../../components'
 import { Trash } from 'react-bootstrap-icons'
 import { Link } from 'react-router-dom'
 import SweetAlert2 from 'react-sweetalert2'
 import './cart.css'
 
 const Cart = () => {
-  const {cart, getTotal} = useCustomContext()
-  const [updatedCart, setUpdatedCart] = useState(cart)
+  const {cart, getTotal, isInCart, removeFromCart } = useCustomContext()
   const [swalProps, setSwalProps] = useState({})
 
-  const deleteItem = (index) => {
-    const newCart = [...updatedCart]
-    newCart.splice(index, 1)
-    setUpdatedCart(newCart)
-  }
 
   return (
     <div className='cartContainer'>
-      <h2>Carrito</h2>
-      {updatedCart.length > 0
+      <h1>Carrito</h1>
+      {cart.length > 0
       ?
       <>
         <div className='cart'>
-          {updatedCart.map((product, index) => (
+          {cart.map((product, index) => (
             <div key={product.id} id={product.id} className='card'>
-              <Link to={'/detail/' + product.id} title={product.title} className='cardLink'>
-                <h2>{product.title}</h2>
                 <img src={product.image} alt={product.title} />
-                <h3 className='category'>{product.category}</h3>
-                <p className='price'>${product.price}</p>
-              </Link>
-              <button className='deleteBtn' onClick={() => deleteItem(index)}>{product.quantity}<Trash /></button>
+                <div className='cartProductDetails'>
+                  <Link to={'/detail/' + product.id} title={product.title}>
+                    <h2>{product.title}</h2>
+                  </Link>
+                  <h3 className='category'>{product.category}</h3>
+                  <p className='price'>${product.price}</p>
+                  {
+                    isInCart(product.id)
+                    ?
+                    <Counter initialValue={product.quantity} stock={product.stock} id={product.id} deleteItem={() => removeFromCart(product.id)} />
+                    :
+                    <Counter initialValue={1} stock={product.stock} id={product.id} deleteItem={() => removeFromCart(product.id)} />
+                  }
+                </div>
             </div>
             ))}
         </div>

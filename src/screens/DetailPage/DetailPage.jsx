@@ -10,7 +10,7 @@ const DetailPage = () => {
   const {getProductById, addProductCart, isInCart, getProductCartById} = useCustomContext()
   const [productDetail, setProductDetail] = useState(isInCart(id) ? getProductCartById(id) : getProductById(id));
   
-  //Tuve que agregar el useEffects porque si entraba directamente al /detail/:id no tenía
+  //Tuve que agregar el useEffect porque si entraba directamente al /detail/:id no tenía
   useEffect(() => {
 
     const fetchProductDetails = async () => {

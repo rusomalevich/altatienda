@@ -1,16 +1,52 @@
+.cartContainer{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.cartContainer h1 {
+    width: 100%;
+}
+
+.cartProductDetails h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+    text-align: left;
+}
+
 .cart{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     row-gap: 3vw;
     text-align: center;
+    flex-direction: column;
+    width: 65%;
 }
 .cart .card {
-    width: 30%;
+    width: 100%;
+    display: flex;
 }
 
-.priceBtnContainer{
+.cartProductDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 40px;
+
+}
+
+.priceBtnContainer {
     text-align: center;
+    width: 30%;
+    position: fixed;
+    top: 180px;
+    right: 40px;
+}
+
+.cart .card img {
+    max-width: 30%;
 }
 
 .swal2-title {
@@ -34,4 +70,84 @@
 
 div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:hover {
     background-image: none !important;
+}
+
+@media (max-width: 1024px) {
+    .cartContainer .priceBtnContainer .btn {
+        width: 100%;
+    }
+
+    .cart .card {
+        width: 90%;
+    }
+    
+    .priceBtnContainer {
+        right: 20px;
+    }
+
+    .cartContainer .priceBtnContainer {
+        width: 35%;
+    }
+    .cartProductDetails h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+   
+    .cartContainer {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .cartContainer h1 {
+        order: 1;
+    }
+
+    .priceBtnContainer{
+        position: static;
+    }
+
+
+    .cart {
+        width: 100%;
+        order: 3;
+    }
+
+    .priceDetail {
+        padding-top: 0;
+    }
+
+    .cartContainer .priceBtnContainer .btn {
+        margin-top:0;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .cartContainer .priceBtnContainer {
+        width: 80%;
+    }
+
+    .cart .card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cart .card img {
+        height: fit-content;
+        max-width: 80%;
+    }
+
+    .cartProductDetails {
+        padding: 0;
+        width: 100%;
+    }
+
+    .addBtn, .subBtn, .deleteBtn {
+        margin: 0 2px;
+    }
+
 }
