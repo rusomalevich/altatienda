@@ -2,14 +2,33 @@
     width: 25%;
 }
 
-.formChecks{
+.formChecks {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    gap: 17px;
 }
-
 .formChecks>label {
     width: 46%;
+}
+
+.btnCatFilter {
+    border-radius: 10px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background-color: var(--white);
+    transition: .15s;
+    box-shadow: 1px 1px 16px -15px;
+    padding: 13px;
+    cursor: pointer;
+}
+
+.btnCatFilter:hover,
+.btnCatFilter:active {
+    box-shadow: 1px 1px 16px -10px;
+    transform: scale(1.02);
 }
 
 .formPrice {
@@ -55,11 +74,12 @@ input[type=radio]+label {
 
 .activeBtn {
     font-weight: 700;
-    background-color: red;
+    background-color: var(--primaryAlpha);
 }
 input[type=radio]:checked + label {
     font-weight: 700;
 }
+
 
 @media (max-width: 768px) {
     .filter {
@@ -73,10 +93,22 @@ input[type=radio]:checked + label {
     .filter .searchForm #search {
         width: 100%;
     }
+
+    .formChecks {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
 }
 
 @media (max-width: 576px) {
     .filter {
         width: 100%;
+    }
+    .formChecks {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .btnCatFilter {
+        flex-basis: 46%;
     }
 }

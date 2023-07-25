@@ -26,8 +26,8 @@
     text-align: center;
 }
 
-.imgPriceContainer > img {
-    max-width: 300px;
+.imgPriceContainer>img {
+    max-width: 220px;
 }
 
 .descBtnContainer {

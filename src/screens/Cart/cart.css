@@ -41,7 +41,7 @@
     text-align: center;
     width: 30%;
     position: fixed;
-    top: 180px;
+    top: 200px;
     right: 40px;
 }
 
@@ -107,6 +107,7 @@ div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2
 
     .priceBtnContainer{
         position: static;
+        order: 2;
     }
 
 
@@ -123,12 +124,18 @@ div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2
         margin-top:0;
     }
 
+    .priceBtnContainer .priceDetail {
+        padding-top: 0;
+        margin: 0;
+    }
+
 }
 
 @media (max-width: 576px) {
 
     .cartContainer .priceBtnContainer {
         width: 80%;
+        order: 2;
     }
 
     .cart .card {
@@ -149,5 +156,5 @@ div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2
     .addBtn, .subBtn, .deleteBtn {
         margin: 0 2px;
     }
-
+    
 }

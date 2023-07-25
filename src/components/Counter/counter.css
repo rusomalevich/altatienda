@@ -83,3 +83,15 @@
 .deleteBtn:hover > svg {
     color:var(--white);
 }
+
+@media (max-width: 576px) {
+    .counter {
+        flex-wrap: wrap;
+        row-gap: 20px;
+        justify-content: center;
+    }
+
+    .counter .btn {
+        width: 100%;
+    }
+}

@@ -11,7 +11,7 @@
     transition: .3s;
 }
 
-.cardLink:hover {
+.cardContainer .card:hover {
     box-shadow: 1px 1px 16px -10px;
     transform: scale(1.05);
 }
