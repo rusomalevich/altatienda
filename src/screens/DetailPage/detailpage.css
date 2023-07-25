@@ -27,7 +27,7 @@
 }
 
 .imgPriceContainer>img {
-    max-width: 220px;
+    max-width: 200px;
 }
 
 .descBtnContainer {
@@ -67,4 +67,19 @@
         width: 100%;
         text-align: center;
     }
+
+    .addBtn, .subBtn, .deleteBtn {
+        padding: 9px 15px;
+    }
+
+    .deleteBtn {
+        padding: 0;
+    }
+
+    .quantityInCart {
+        line-height: 36px;
+        padding: 0px 15px;
+        font-weight: 600;
+    }
+    
 }

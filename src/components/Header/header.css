@@ -16,3 +16,9 @@
 .logo {
     width: 200px;
 }
+
+@media (max-width:576px) {
+    .logo{
+        width: 160px;
+    }
+}
