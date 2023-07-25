@@ -1,0 +1,37 @@
+.cart{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 3vw;
+    text-align: center;
+}
+.cart .card {
+    width: 30%;
+}
+
+.priceBtnContainer{
+    text-align: center;
+}
+
+.swal2-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+}
+
+.swal2-actions, div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+    background-color: var(--secondary) !important;
+    transition: .3s;
+}
+
+.swal2-actions:hover,
+.swal2-actions:hover button:where(.swal2-styled).swal2-confirm:hover {
+    background-color: var(--primary) !important;
+}
+
+.swal2-actions:hover, div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm:hover, div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm:focus {
+    box-shadow: none !important;
+}
+
+div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:hover {
+    background-image: none !important;
+}

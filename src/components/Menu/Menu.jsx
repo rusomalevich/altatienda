@@ -1,5 +1,5 @@
 import React from 'react'
-import { HouseDoorFill, CartFill, Search, EnvelopeFill } from 'react-bootstrap-icons'
+import { HouseDoorFill, CartFill, EnvelopeFill } from 'react-bootstrap-icons'
 import './menu.css'
 import { NavLink } from 'react-router-dom'
 

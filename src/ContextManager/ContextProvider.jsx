@@ -24,7 +24,7 @@ const ContextProvider = ({children}) => {
 
     const addProductCart = (id, quantity) =>{
         if(isInCart(id)){
-            SetCart(cart.map(product =>{
+            setCart(cart.map(product =>{
                 if(product.id == id) {
                     product.quantity = quantity
                 }
@@ -38,7 +38,7 @@ const ContextProvider = ({children}) => {
 
     const getTotal = () => {
         let total = 0
-        cart.forEach(product => total += product.precio * product.quantity)
+        cart.forEach(product => total += product.price * product.quantity)
         return total
     }
 
@@ -87,7 +87,7 @@ const ContextProvider = ({children}) => {
     }
     
   return (
-      <Context.Provider value={{ products, setProducts, getProductById, cart, addProductCart, isInCart, getTotal, searchInCategories, categories, filteredProducts, setFilteredProducts, filterSearch, filterCatSearch }}>
+      <Context.Provider value={{ products, setProducts, getProductById, cart, addProductCart, isInCart, getProductCartById, getTotal, searchInCategories, categories, filteredProducts, setFilteredProducts, filterSearch, filterCatSearch }}>
         {children}
     </Context.Provider>
   )

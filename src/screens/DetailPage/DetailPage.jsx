@@ -23,11 +23,11 @@ const DetailPage = () => {
 
   if (!productDetail) {
     //CAMBIAR POR GIF
-    return <p>Loading...</p>
+    return <p>Cargando...</p>
   }
 
   return (
-    <article className='detailsProduct'>
+    <article id={productDetail.id} className='detailsProduct'>
         <header>
           <h2>{productDetail.title}</h2>
           <h3 className='category'>{productDetail.category}</h3>
@@ -38,7 +38,13 @@ const DetailPage = () => {
         </div>
         <div className='descBtnContainer'>
           <p>{productDetail.description}</p>
-          <Counter id={productDetail.id}/>
+        {
+          isInCart(id)
+          ?
+          <Counter initialValue={productDetail.quantity} stock={productDetail.stock} id={productDetail.id}/>
+          :
+          <Counter initialValue={1} stock={productDetail.stock} id={productDetail.id} />
+        }
         </div>
     </article>
   )
