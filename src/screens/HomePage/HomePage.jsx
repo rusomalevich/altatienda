@@ -12,6 +12,7 @@ const HomePage = () => {
         576: 1
     };
     
+    
     return (
         <>
             <h1>Productos</h1>

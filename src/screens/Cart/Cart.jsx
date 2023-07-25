@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import { useCustomContext } from '../../ContextManager/ContextProvider'
 import { Trash } from 'react-bootstrap-icons'
 import { Link } from 'react-router-dom'
@@ -50,11 +51,10 @@ const Cart = () => {
         </div>
       </>
       :
-      <p>El carrito está vacío</p>
+        <p>Tu carrito está vacío, podés agregar tus productos <NavLink to="/">aquí</NavLink></p>
       }
     </div>
   )
 }
 
-//            <ProductsList key={product.id} producto={product} />
 export default Cart

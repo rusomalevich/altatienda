@@ -11,6 +11,8 @@ const ContextProvider = ({children}) => {
     const [searchInCategories, setSearchInCategories] =useState([])
     const [filteredProducts, setFilteredProducts] = useState([])
     const [cart, setCart] = useState([])
+    const [loading, setLoading] = useState(false)
+
 
     const getProductById = (id) => {
         return products.find(product => product.id === Number(id))
@@ -39,13 +41,16 @@ const ContextProvider = ({children}) => {
     const getTotal = () => {
         let total = 0
         cart.forEach(product => total += product.price * product.quantity)
+        total = Number(total.toFixed(2))
         return total
     }
 
     useEffect(() => {
         const getProducts = async () => {
+            setLoading(true)
             const response = await axios.get(`${BASEURL}`)
             setProducts(response.data)
+            setLoading(false)
         }
         getProducts()
     }, [])
@@ -60,8 +65,10 @@ const ContextProvider = ({children}) => {
 
     useEffect(() => {
         const getSearchCategories = async () => {
+            setLoading(true)
             const responseSearchCat = await axios.get(`${BASEURL}${URLsearchInCats}jewelery`)
             setSearchInCategories(responseSearchCat.data)
+            setLoading(false)
         }
         getSearchCategories()
     }, [])
@@ -87,7 +94,7 @@ const ContextProvider = ({children}) => {
     }
     
   return (
-      <Context.Provider value={{ products, setProducts, getProductById, cart, addProductCart, isInCart, getProductCartById, getTotal, searchInCategories, categories, filteredProducts, setFilteredProducts, filterSearch, filterCatSearch }}>
+      <Context.Provider value={{ loading, products, setProducts, getProductById, cart, addProductCart, isInCart, getProductCartById, getTotal, searchInCategories, categories, filteredProducts, setFilteredProducts, filterSearch, filterCatSearch }}>
         {children}
     </Context.Provider>
   )
