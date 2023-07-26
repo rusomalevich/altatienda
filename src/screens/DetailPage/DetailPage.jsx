@@ -7,10 +7,9 @@ import './detailpage.css'
 const DetailPage = () => {
 
   const {id} = useParams()
-  const {getProductById, addProductCart, isInCart, getProductCartById} = useCustomContext()
+  const {getProductById, isInCart, getProductCartById} = useCustomContext()
   const [productDetail, setProductDetail] = useState(isInCart(id) ? getProductCartById(id) : getProductById(id));
   
-  //Tuve que agregar el useEffect porque si entraba directamente al /detail/:id no tenía
   useEffect(() => {
 
     const fetchProductDetails = async () => {
@@ -22,7 +21,6 @@ const DetailPage = () => {
   }, [id, getProductById])
 
   if (!productDetail) {
-    //CAMBIAR POR GIF
     return <p>Cargando...</p>
   }
 

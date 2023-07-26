@@ -141,6 +141,7 @@ div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2
     .cart .card {
         flex-direction: column;
         align-items: center;
+        width: 96%;
     }
 
     .cart .card img {

@@ -26,7 +26,8 @@
 
 .footerColumn h4 {
     font-size: 2.2rem;
-    color: var(--gray-blue-grey-blue-50)
+    color: var(--gray-blue-grey-blue-50);
+    margin-top:0;
 }
 
 .address {
@@ -34,9 +35,13 @@
     color: var(--gray-blue-grey-blue-80);
 }
 
-.copyright{
+.copyright, .copyright a, .copyright p{
     color: var(--gray-blue-grey-blue-80);
+    font-weight: 400;
+    font-size: 1.3rem;
 }
+
+
 
 @media (max-width: 576px) {
     .bigFooter{

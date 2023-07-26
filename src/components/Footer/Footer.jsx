@@ -5,37 +5,37 @@ const Footer = () => {
   return (
     <footer className='bigFooter'>
         <div className='footerColumn footerFullWidth'>
-            <h4>Constructor</h4>
-            <p className='address'>12 Water St. Vacouver, BC <br /> V6B 132 United States</p>
+            <h4>altaTienda</h4>
+            <p className='address'>Av. Dr. Ricardo Balbín 2100,<br />San Miguel,<br />Buenos Aires, Argentina</p>
         </div>
         <div className='footerColumn'>
-            <a href="#">Corporate sales</a>
-            <a href="#">Feedback</a>
-            <a href="#">Jobs</a>
-            <a href="#">News</a>
-            <a href="#">Sales Rules</a>
-            <a href="#">For partners</a>
+            <a href="#">Ventas corporativas</a>
+            <a href="#">Sugerencias</a>
+            <a href="#">Trabajos</a>
+            <a href="#">Noticias</a>
+            <a href="#">Reglas de ventas</a>
+            <a href="#">Programa de partners</a>
         </div>
         <div className='footerColumn'>
-            <a href="#">Bonus program</a>
+            <a href="#">Promos</a>
             <a href="#">Gift Сards</a>
-            <a href="#">Bill Payment Verification</a>
-            <a href="#">Loans</a>
+            <a href="#">Verificación de pagos</a>
+            <a href="#">Préstamos</a>
             <a href="#">Delivery</a>
-            <a href="#">Service centers</a>
+            <a href="#">Centros de servicio</a>
         </div>
         <div className='footerColumn footerHide'>
-            <a href="#">How to place an order</a>
-            <a href="#">Ways of payment</a>
-            <a href="#">Exchange and return of goods</a>
-            <a href="#">Warranty service</a>
-            <a href="#">Order status</a>
-            <a href="#">Knowledge base</a>
+            <a href="#">Cómo comprar</a>
+            <a href="#">Formas de pago</a>
+            <a href="#">Cambio y devolución</a>
+            <a href="#">Garantía</a>
+            <a href="#">Estado de tu pedido</a>
+            <a href="#">FAQ - Preguntas Frecuentes</a>
         </div>
         <div className='footerColumn copyright footerFullWidth'>
-            <p>2030 Company. All Rights Reserved.</p>
-            <p>Terms & Conditions</p>
-            <p>Privacy Policy</p>
+            <p>2023. Todos los derechos resevados.</p>
+            <a href="#">Términos y condiciones</a>
+            <a href="#">Políticas de privacidad</a>
         </div>
     </footer>
   )

@@ -25,15 +25,11 @@ const Counter = ({initialValue, stock, id, deleteItem }) => {
     }
 
     const handleAddBtn = () => {
-      //setQuantity(quantity > 1 ? quantity - 1 : quantity)
-      setQuantity(prevQuantity => prevQuantity > 1 ? prevQuantity - 1 : prevQuantity)
- 
+      setQuantity(quantity > 1 ? quantity - 1 : quantity)
     }
 
     const handleSubBtn = () => {
-      //setQuantity(quantity === stock ? qantity : quantity + 1)
-      setQuantity(prevQuantity => prevQuantity === stock ? prevQuantity : prevQuantity + 1)
-
+      setQuantity(quantity === stock ? qantity : quantity + 1)
     }
 
   return (
@@ -41,7 +37,13 @@ const Counter = ({initialValue, stock, id, deleteItem }) => {
         <button className='addBtn' onClick={handleAddBtn}>-</button>
         <span className='quantityInCart'>{quantity}</span>
         <button className='subBtn' onClick={handleSubBtn}>+</button>
-        <button className='deleteBtn' onClick={deleteItem}><Trash /></button>
+        {
+        location.pathname == '/cart'
+        ?
+          <button className='deleteBtn' onClick={deleteItem}><Trash /></button>
+        :
+          <></>
+        }
         {
           location.pathname=='/cart'
           ?

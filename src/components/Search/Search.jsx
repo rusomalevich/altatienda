@@ -4,7 +4,7 @@ import './search.css'
 
 const Search = () => {
   const [q, setQ] = useState("")
-  const { filterSearch, filteredProducts, setFilteredProducts } = useCustomContext()
+  const { filterSearch } = useCustomContext()
 
   const handleChange=(e) => {
     const searchValue = e.target.value
