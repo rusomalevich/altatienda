@@ -106,7 +106,8 @@ div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2
     }
 
     .priceBtnContainer{
-        position: static;
+        position: sticky;
+        top:91px;
         order: 2;
     }
 
@@ -136,6 +137,9 @@ div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2
     .cartContainer .priceBtnContainer {
         width: 80%;
         order: 2;
+        background-color: var(--white);
+        padding: 15px;
+        border-radius: 10px;
     }
 
     .cart .card {

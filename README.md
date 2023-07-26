@@ -26,6 +26,7 @@ En **components**:
     * __Footer__ contiene un grupo de links para consultar más información de la tienda
 
     * __ProductList__ muestra los productos obtenidos de la API
+    * __Search__ permite buscar dentro de los productos según el título de cada producto.
     * __Filter__ permite seleccionar las categorías que se pueden usar para filtrar los productos
     * __Counter__ se encarga de agregar o quitar productos del carrito. Es llamado tanto desde el componente __details__ como del carrito y permite, según en qué página se encuentre, modificar las cantidades, eliminar el producto, modificar su situación en el carrito o agregarlo.
 
