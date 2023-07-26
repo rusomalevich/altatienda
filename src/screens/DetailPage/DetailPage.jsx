@@ -8,16 +8,16 @@ const DetailPage = () => {
 
   const {id} = useParams()
   const {getProductById, isInCart, getProductCartById} = useCustomContext()
-  const [productDetail, setProductDetail] = useState(isInCart(id) ? getProductCartById(id) : getProductById(id));
+  const [productDetail, setProductDetail] = useState(isInCart(id) ? getProductCartById(id) : getProductById(id))
   
   useEffect(() => {
 
     const fetchProductDetails = async () => {
-      const product = getProductById(id);
-      setProductDetail(product);
+      const product = getProductById(id)
+      setProductDetail(product)
     };
 
-    fetchProductDetails();
+    fetchProductDetails()
   }, [id, getProductById])
 
   if (!productDetail) {
