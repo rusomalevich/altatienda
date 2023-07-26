@@ -15,13 +15,13 @@ En **screens**:
 
     * __HomePage__ es la página de inicio, en donde se listan los productos. Allí se pueden mirar todos los productos, buscar escribiendo un término o verlos divididos por categorías.
     * __DetailPage__ es la página donde están los detalles de cada producto, desde allí también se puede definir cuántos productos se quiere comprar y agregarlos al carrito.
-    * __Cart__ es la página que muestra los productos que se están por comprar, desde allí se pueden modificar las cantidades, eliminar del carrito los productos o confirmar la compra.
+    * __Cart__ es la página que muestra los productos que se están por comprar, desde allí se pueden modificar las cantidades, eliminar del carrito los productos o confirmar la compra. El carrito se encuentra fijado en la pantalla para poder verlo todo el tiempo aún si hubiera scroll. En la versión mobile se encuentra sticky, por lo que se fija al bajar y se posiciona sobre el resto de los elementos. Esto permite realizar la compra sin tener que volver al principio.
     * __Contact__ es donde se puede mandar un mail por cualquier consulta.
 
 En **components**:
 
     Dentro de los componentes que agrupan visualmente
-    * __Header__ contiene y estructura el logo, el componente de búsqueda (__Search__) y el menús (__Menu__) con los links. Se encuentra con un position sticky para que al realizar scroll vertical se fije en la parte superior de la página.
+    * __Header__ contiene y estructura el logo, el componente de búsqueda (__Search__) y el menús (__Menu__) con los links. Se encuentra con un position sticky para que al realizar scroll vertical se fije en la parte superior de la página. El botón para ir al carrito también está conectado al ContextProvider para mostrar cuantos productos hay en el carrito, si hay alguno.
 
     * __Footer__ contiene un grupo de links para consultar más información de la tienda
 

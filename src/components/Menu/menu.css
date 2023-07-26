@@ -18,6 +18,24 @@
 .menu .navItem:hover{
     color: var(--secondary);
 }
+
+.navCart {
+    position: relative;
+}
+
+.navCart span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    color: var(--white);
+    position: absolute;
+    background-color: var(--secondary);
+    border-radius: 100%;
+    text-align: center;
+    line-height: 16px;
+    top: -3px;
+    right: -7px;
+}
 @media (max-width:576px) {
     .menu {
         width: 85px;
